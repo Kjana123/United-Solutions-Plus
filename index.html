@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>United Solutions Plus - Digital Marketing & Content Services</title>
+    <style>
+
+html {
+            scroll-behavior: smooth;
+        }
+        :root {
+            --primary:  #21f3db;
+            --secondary: #FF6584;
+            --accent: #00D9C0;
+            --dark: #2E2E2E;
+            --light: #F8F9FA;
+            
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(90deg, #263675, #A77BCA); /* Gradient from dark blue to light purple */
+            height: 100px; /* Adjust height as needed */
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+      
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        /* Navigation Menu */
+.nav-links {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20; /* Ensure the navigation is above other elements */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+     /* Pay Now Button in Navigation */
+.nav-links .pay-now-btn {
+    color: white;
+    font-size: 18px;
+    padding: 5px 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-links .basic-pay-now {
+    background-color: #00c4b4;
+}
+
+.nav-links .basic-pay-now:hover {
+    background-color: #00a89a;
+    text-decoration: none;
+}
+
+/* Modal (Popup) Styling (for both auth and payment modals) */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+.modal-content {
+    background-color: white;
+    width: 90%;
+    max-width: 400px;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+.close-btn:hover {
+    color: #ff5e62;
+}
+
+/* Payment Form in Modal */
+#payment-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#payment-form button {
+    background-color: #00c4b4;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#payment-form button:hover {
+    background-color: #00a89a;
+}
+
+/* Contact Form (reverted styles) */
+.contact-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 36px;
+    color: #6a11cb;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form button {
+    background-color: #00c4b4;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #00a89a;
+}
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            background-color: #3a30f0;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            color: var(--dark);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-img {
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+    
+        
+
+    
+        .service-content h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .content-services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .content-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .content-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .content-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .content-details {
+            padding: 1.5rem;
+        }
+        
+        .content-details h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .pricing {
+            background-color: var(--light);
+        }
+        
+        .pricing-plans {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .plan {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .plan:hover {
+            transform: translateY(-10px);
+        }
+        
+        .plan-header {
+            background-color: blue;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .plan-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .plan-price {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        
+        .plan-price span {
+            font-size: 1rem;
+            font-weight: normal;
+        }
+        
+        .plan-features {
+            padding: 2rem;
+            list-style: none;
+        }
+        
+        .plan-features li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .plan-features li:before {
+            content: "✓";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+        }
+        
+        .plan-cta {
+            text-align: center;
+            padding: 0 2rem 2rem;
+        }
+        
+        .testimonials {
+            background-color: var(--light);
+        }
+        
+        .testimonial-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 2rem;
+        }
+        
+        .testimonial-content {
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 1rem;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.2rem;
+        }
+        
+        .author-info p {
+            color: #666;
+        }
+        
+        .contact-form {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 2rem;
+            max-width: 700px;
+            margin: 3rem auto 0;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+        }
+        
+        .form-submit {
+            text-align: center;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+        
+        .footer-col h3 {
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-col ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #444;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            position: relative;}
+
+            .logo {
+    position: absolute;
+    background-color: linear-gradient(90deg, #4B5EAA, #A77BCA); /* Gradient from dark blue to light purple */
+    top: 0px;
+    left: 0px;
+    width: 150px;
+    z-index: 10;
+        padding: 5px; /* Adds space inside the border */
+    
+}
+
+
+        .logo img {
+            background-color: linear-gradient(90deg, #4B5EAA, #A77BCA);
+            width: 120px; /* Adjust logo size as needed */
+            height: 95px;
+        }
+
+        /* Main content styling (to match the layout in the image) */
+        .content {
+            padding-top: 80px;
+            text-align: center;
+        }
+
+
+        
+
+        /* Contact Us Button in Discussion */
+        .contact-btn {
+            background-color: #00c4b4;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .contact-btn:hover {
+            background-color: #00a89a;
+        }
+      /* Hidden Discussion Section */
+     
+     /* Hidden Discussion Section */
+     .discussion {
+            display: none; /* Hidden by default */
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .discussion h3 {
+            font-size: 24px;
+            color: #6a11cb;
+            margin-bottom: 10px;
+        }
+
+        .discussion p {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Learn More Button */
+        .learn-more-btn {
+            background-color: #00c4b4;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: inline-block;
+            margin-top: 10px; /* Adds space above the button */
+        }
+
+        .learn-more-btn:hover {
+            background-color: #00a89a;
+        }
+        
+
+        /* Sign Up Button in Navigation */
+.signup-btn {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.signup-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Login Button in Navigation */
+.login-btn {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Modal (Popup) Styling */
+/* Modal (Popup) Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+.modal-content {
+    background-color: white;
+    width: 90%;
+    max-width: 400px;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+.close-btn:hover {
+    color: #ff5e62;
+}
+
+/* Tab Styling */
+.tab-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab {
+    background-color: #f1f1f1;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tab.active {
+    background-color: #00c4b4;
+    color: white;
+}
+
+.tab:hover {
+    background-color: #ddd;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+#signup-form input,
+#login-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#signup-form button,
+#login-form button {
+    background-color: #00c4b4;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#signup-form button:hover,
+#login-form button:hover {
+    background-color: #00a89a;
+}
+
+       /* UPI Payment Section in Modal */
+.upi-payment-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+    text-align: center;
+}
+
+.upi-payment-section h4 {
+    font-size: 18px;
+    color: #6a11cb;
+    margin-bottom: 10px;
+}
+
+.upi-payment-section p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.upi-qr-code {
+    width: 150px;
+    height: 150px;
+    margin: 10px auto;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.upi-instructions {
+    font-size: 14px;
+    color: #666;
+    font-style: italic;
+} 
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            
+                        <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#content">Content Writing</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" onclick="openAuthModal()" class="login-btn">Login</a></li>
+                <li><a href="#" onclick="openPaymentModal()" class="pay-now-btn basic-pay-now">Pay Now</a></li>
+      
+            </ul>
+            
+
+            
+
+            <div class="logo">
+                <img src="./a-3d-render-of-a-logo-with-the-text-unit_EE5hgM44RZOOjSD7A8eOig_yxCSqkReTmaYLces5ugSjg.jpeg">
+                
+            </div>
+        </nav>
+    </header>
+    
+    <div class="hero">
+        <h1>Transform Your Digital Presence</h1>
+        <p>Innovative digital marketing solutions and compelling content that drive results. At United Solutions Plus, we blend creativity with strategy to take your business to new heights.</p>
+        <a href="#contact" class="btn">Get Started</a>
+    </div>
+    
+    <section id="services">
+        <div class="section-title">
+            <h2>Digital Marketing Services</h2>
+            <p>Comprehensive digital marketing solutions to boost your online presence and drive measurable results.</p>
+        </div>
+        
+        
+
+            <!-- Content Sections with Images, Learn More Buttons, and Discussions -->
+    <div class="content-section">
+        <h2>Search Engine Optimization (SEO)</h2>
+        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0" alt="SEO Services" class="service-img">
+     
+        <p>We offer comprehensive SEO services to improve your website's visibility on search engines. Our team conducts in-depth keyword research to target the right audience, optimizes on-page elements like meta tags and content, and builds high-quality backlinks to boost your rankings. We also focus on technical SEO to enhance site speed and user experience, ensuring long-term growth. With regular performance tracking, we keep you informed of your progress every step of the way.</p>
+        <button class="learn-more-btn" onclick="toggleDiscussion('seo-discussion')">Learn More</button>
+        <div id="seo-discussion" class="discussion">
+            <h3>What We Do for SEO</h3>
+            <p>Our SEO services include a thorough website audit to identify areas for improvement, keyword research to target the right audience, on-page optimization (meta tags, headings, content), and off-page strategies like link building. We also provide regular performance reports to track your rankings and traffic growth.</p>
+            <a href="#contact" class="contact-btn">Contact Us</a>
+        </div>
+    </div>
+            
+            <div class="service-card">
+                <img src="./pexels-eva-bronzini-6956303.jpg" alt="Social Media Marketing" class="service-img">
+                <div class="service-content">
+                    <h3>Social Media Marketing</h3>
+                    <p>Engage with your audience and build brand loyalty through effective social media campaigns. We create compelling content, manage your accounts, and run targeted ads.</p>
+                    <a href="#contact" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <img src="./pexels-tranmautritam-326515.jpg" alt="Website Design" class="service-img">                                <div class="service-content">
+                    <h3>Website Design & Development</h3>
+                    <p>We build responsive, user-friendly websites that reflect your brand and captivate your audience. Our team specializes in custom web design, creating visually stunning layouts that align with your business goals. We ensure seamless functionality with modern technologies like HTML, CSS, and JavaScript, while optimizing for speed, security, and SEO. From e-commerce platforms to corporate sites, we deliver tailored solutions that drive engagement and growth.</p>
+                    <button class="learn-more-btn" onclick="toggleDiscussion('web-dev-discussion')">Learn More</button>
+                    <div id="web-dev-discussion" class="discussion">
+                        <h3>What We Do for Web Development</h3>
+                        <p>Our web development services include designing and building a custom website with a focus on user experience, mobile responsiveness, and fast load times. We use modern technologies like HTML, CSS, and JavaScript, and ensure your site is optimized for SEO and security.</p>
+                        <a href="#contact" class="contact-btn">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <img src="./Social Media.png" alt="PPC Advertising" class="service-img">
+                <div class="service-content">
+                    <h3>PPC Advertising</h3>
+                    <p>Maximize your ROI with targeted pay-per-click campaigns. We manage your Google Ads, social media ads, and remarketing strategies to drive quality traffic.</p>
+                    <a href="#contact" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <img src="./Email marketing pic.jpg" alt="Email Marketing" class="service-img">
+                <div class="service-content">
+                    <h3>Email Marketing</h3>
+                    <p>Nurture leads and retain customers with personalized email campaigns. We design, write, and optimize emails that drive engagement and conversions.</p>
+                    <a href="#contact" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <img src="./Analytics.jpg" alt="Analytics & Reporting" class="service-img">
+                <div class="service-content">
+                    <h3>Analytics & Reporting</h3>
+                    <p>Make data-driven decisions with comprehensive analytics and reporting. We track key metrics and provide actionable insights to improve your marketing strategy.</p>
+                    <a href="#contact" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="./Logo Design.jpg" alt="Logo Design" class="service-img">
+                <div class="service-content">
+                    <h3>Logo design</h3>
+                    <p>A logo is more than just a symbol—it’s the face of your brand. At United Solutions Plus, we craft unique, memorable, and professional logos that reflect your brand identity and leave a lasting impression.</p>
+                    <a href="#contact" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="content" style="background-color: #f0f2f5;">
+        <div class="section-title">
+            <h2>Content Writing Services</h2>
+            <p>Our team creates compelling content that engages your audience and drives conversions. We specialize in crafting blog posts, articles, and social media content tailored to your brand’s voice. Our process includes audience research, content planning, and professional editing to ensure quality. We also produce video scripts and graphics to enhance your digital presence."</p>
+            <button class="learn-more-btn" onclick="toggleDiscussion('content-discussion')">Learn More</button>
+            <div id="content-discussion" class="discussion">
+                <h3>What We Do for Content Creation</h3>
+                <p>At United Solutions Plus, we provide a wide range of content writing services tailored to meet the unique needs of diverse industries and audiences. Our team excels in crafting engaging blog posts and articles that captivate readers while boosting your online presence through SEO optimization. For specialized fields, we offer expertly researched legal content that ensures accuracy and compliance, medical writing that simplifies complex health topics for patients and professionals, and technical writing that breaks down intricate concepts into clear, user-friendly documentation. We also create educational content, including e-learning materials and academic resources, designed to inform and inspire learners of all levels. Beyond these, our services extend to social media content, marketing copy, whitepapers, and video scripts, ensuring every piece aligns with your brand’s voice and business objectives. With a strategic approach that includes audience analysis, content planning, and professional editing, we deliver high-quality, impactful content that drives engagement and growth across all platforms.</p>
+                <a href="#contact" class="contact-btn">Contact Us</a>
+            </div>
+        </div>
+        
+        <div class="content-services">
+            <div class="content-card">
+                <img src="./Educational content writing.jpg" alt="Educational Content" class="content-img">
+                <div class="content-details">
+                    <h3>Educational Content</h3>
+                    <p>Informative articles, guides, and resources that establish your authority in your field. Perfect for educational institutions, e-learning platforms, and knowledge-based businesses.</p>
+                    <a href="#contact" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+            
+            <div class="content-card">
+                <img src="./Medical Writing.jpg" alt="Medical Content" class="content-img">
+                <div class="content-details">
+                    <h3>Medical Content</h3>
+                    <p>Accurate, compliant, and accessible medical content for healthcare providers, pharma companies, and health platforms. Written by experts with medical knowledge.</p>
+                    <a href="#contact" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+            
+            <div class="content-card">
+                <img src="./Legal writing.jpg" alt="Legal Content" class="content-img">
+                <div class="content-details">
+                    <h3>Legal Content</h3>
+                    <p>Clear, precise legal content that simplifies complex concepts for your audience. Suitable for law firms, legal tech companies, and compliance services.</p>
+                    <a href="#contact" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+            
+            <div class="content-card">
+                <img src="./Product Writing.jpg" alt="Product Content" class="content-img">
+                <div class="content-details">
+                    <h3>Product Content</h3>
+                    <p>Compelling product descriptions, features, and benefits that drive sales. We highlight your unique selling points and address customer pain points.</p>
+                    <a href="#contact" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+            
+            <div class="content-card">
+                <img src="./Technical Writing.jpg" alt="Technical Content" class="content-img">
+                <div class="content-details">
+                    <h3>Technical Content</h3>
+                    <p>Detailed technical documentation, guides, and tutorials that explain complex concepts in accessible language. Ideal for tech companies and SaaS products.</p>
+                    <a href="#contact" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+            
+            <div class="content-card">
+                <img src="./Blog writing.jpg" alt="Lifestyle Content" class="content-img">
+                <div class="content-details">
+                    <h3>Lifestyle Content</h3>
+                    <p>Engaging lifestyle articles, blog posts, and social media content that resonates with your audience. Perfect for fashion, food, travel, and wellness brands.</p>
+                    <a href="#contact" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="pricing" class="pricing">
+        <div class="section-title">
+            <h2>Pricing Plans</h2>
+            <p>Flexible pricing options to suit businesses of all sizes.</p>
+        </div>
+        
+        <div class="pricing-plans">
+            <div class="plan">
+                <div class="plan-header" style="background-color: var(--accent);">
+                    <h3>Starter</h3>
+                    <div class="plan-price">₹25,000<span>/month</span></div>
+                </div>
+                <ul class="plan-features">
+                    <li>Basic SEO optimization</li>
+                    <li>5 social media posts per week</li>
+                    <li>1 blog article (1000 words)</li>
+                    <li>Monthly performance report</li>
+                    <li>Email support</li>
+                </ul>
+                <div class="plan-cta">
+                    <a href="#contact" class="btn" style="background-color: var(--accent);">Get Started</a>
+                </div>
+            </div>
+            
+            <div class="plan">
+                <div class="plan-header">
+                    <h3>Professional</h3>
+                    <div class="plan-price">₹50,000<span>/month</span></div>
+                </div>
+                <ul class="plan-features">
+                    <li>Advanced SEO strategy</li>
+                    <li>10 social media posts per week</li>
+                    <li>2 blog articles (1500 words each)</li>
+                    <li>Basic PPC campaign management</li>
+                    <li>Bi-weekly performance reports</li>
+                    <li>Priority email & phone support</li>
+                </ul>
+                <div class="plan-cta">
+                    <a href="#contact" class="btn">Get Started</a>
+                </div>
+            </div>
+            
+            <div class="plan">
+                <div class="plan-header" style="background-color: var(--secondary);">
+                    <h3>Enterprise</h3>
+                    <div class="plan-price">₹95,000<span>/month</span></div>
+                </div>
+                <ul class="plan-features">
+                    <li>Comprehensive SEO strategy</li>
+                    <li>15 social media posts per week</li>
+                    <li>4 blog articles (2000 words each)</li>
+                    <li>Full PPC campaign management</li>
+                    <li>Website maintenance & updates</li>
+                    <li>Weekly performance reports</li>
+                    <li>Dedicated account manager</li>
+                    <li>24/7 priority support</li>
+                </ul>
+                <div class="plan-cta">
+                    <a href="#contact" class="btn" style="background-color: var(--secondary);">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="testimonials" class="testimonials">
+        <div class="section-title">
+            <h2>Client Testimonials</h2>
+            <p>Don't just take our word for it. See what our clients have to say about our services.</p>
+        </div>
+        
+        <div class="testimonial-cards">
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"United Solutions Plus transformed our online presence completely. Their SEO strategy helped us rank on the first page for our key terms, and the content they created resonates perfectly with our audience."</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="/api/placeholder/400/320" alt="Rajesh Sharma" class="author-img">
+                    <div class="author-info">
+                        <h4>Rajesh Sharma</h4>
+                        <p>CEO, TechVision India</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"The team at United Solutions Plus understands our medical practice's unique needs. Their content is accurate, compliant, and engaging. Our patient engagement has increased by 40% since working with them."</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="/api/placeholder/400/320" alt="Dr. Priya Patel" class="author-img">
+                    <div class="author-info">
+                        <h4>Dr. Priya Patel</h4>
+                        <p>Director, Wellness Medical Centre</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"Working with United Solutions Plus has been a game-changer for our e-commerce business. Their product descriptions and social media strategy have directly contributed to a 65% increase in our online sales."</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="/api/placeholder/400/320" alt="Anita Desai" class="author-img">
+                    <div class="author-info">
+                        <h4>Anita Desai</h4>
+                        <p>Founder, StyleHouse</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <div class="section-title">
+            <h2>Contact Us</h2>
+            <p>Ready to elevate your digital presence? Get in touch with our team today.</p>
+        </div>
+        
+        <div class="contact-form">
+            <form>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                
+                <div class="form-group">
+                    <label for="service">Service Interested In</label>
+                    <select id="service" name="service">
+                        <option value="">Select a Service</option>
+                        <option value="seo">Search Engine Optimization</option>
+                        <option value="social">Social Media Marketing</option>
+                        <option value="website">Website Design & Development</option>
+                        <option value="ppc">PPC Advertising</option>
+                        <option value="email">Email Marketing</option>
+                        <option value="content">Content Writing</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <div class="form-submit">
+                    <button type="submit" class="btn">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>United Solutions Plus</h3>
+                <p>Transform your digital presence with our innovative marketing solutions and compelling content.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#services">SEO</a></li>
+                    <li><a href="#services">Social Media Marketing</a></li>
+                    <li><a href="#services">Website Design</a></li>
+                    <li><a href="#services">PPC Advertising</a></li>
+                    <li><a href="#services">Email Marketing</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Content</h3>
+                <ul>
+                    <li><a href="#content">Educational Content</a></li>
+                    <li><a href="#content">Medical Content</a></li>
+                    <li><a href="#content">Legal Content</a></li>
+                    <li><a href="#content">Product Content</a></li>
+                    <li><a href="#content">Technical Content</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <ul>
+                    <li>Email: info@unitedsolutionsplus.com</li>
+                    <li>Phone: +91 98765 43210</li>
+                    <li>Address: 404, Digital Tower, Cyber City, Gurugram, India</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 United Solutions Plus. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleDiscussion(discussionId) {
+            const discussion = document.getElementById(discussionId);
+            if (discussion.style.display === "block") {
+                discussion.style.display = "none";
+            } else {
+                // Hide all discussions first
+                document.querySelectorAll('.discussion').forEach(disc => {
+                    disc.style.display = "none";
+                });
+                // Show the selected discussion
+                discussion.style.display = "block";
+            }
+        }
+
+        function openLoginModal() {
+    document.getElementById('login-modal').style.display = 'block';
+}
+
+function closeLoginModal() {
+    document.getElementById('login-modal').style.display = 'none';
+}
+
+// Modal Functions
+function openAuthModal() {
+    const modal = document.getElementById('auth-modal');
+    if (modal) {
+        modal.style.display = 'block';
+    } else {
+        console.error('Modal element not found!');
+    }
+}
+
+function closeAuthModal() {
+    const modal = document.getElementById('auth-modal');
+    if (modal) {
+        modal.style.display = 'none';
+    }
+}
+
+// Tab Switching
+function showTab(tabName) {
+    // Hide all tab contents
+    document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active');
+    });
+    // Remove active class from all tabs
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.classList.remove('active');
+    });
+    // Show the selected tab content
+    document.getElementById(tabName + '-tab').classList.add('active');
+    // Add active class to the selected tab
+    document.querySelector(`.tab[onclick="showTab('${tabName}')"]`).classList.add('active');
+}
+
+// Mock Sign Up Handler
+function handleSignup(event) {
+    event.preventDefault();
+    alert('Sign Up Successful! Please log in to continue.');
+    // Switch to Login tab after sign-up
+    showTab('login');
+}
+
+// Mock Login Handler
+function handleLogin(event) {
+    event.preventDefault();
+    alert('Login Successful! Redirecting to Customer Portal...');
+    // Redirect to customer portal (mock implementation)
+    window.location.href = 'customer-portal.html';
+    // In a real app, you'd verify credentials with a backend and redirect
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    const modal = document.getElementById('auth-modal');
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+}
+
+// Function for the "Pay Now" button in the navigation bar
+function openPaymentModal() {
+    console.log('Opening payment modal...'); // Debug log
+    const modal = document.getElementById('payment-modal');
+    if (modal) {
+        modal.style.display = 'block';
+        console.log('Payment modal should be visible now');
+    } else {
+        console.error('Payment modal not found! Check if the modal HTML is present in the DOM.');
+    }
+}
+
+function closePaymentModal() {
+    console.log('Closing payment modal...'); // Debug log
+    const modal = document.getElementById('payment-modal');
+    if (modal) {
+        modal.style.display = 'none';
+    } else {
+        console.error('Payment modal not found!');
+    }
+}
+
+// Function to handle form submission and initiate Razorpay payment
+function handlePayment(event) {
+    event.preventDefault();
+    console.log('Handling payment form submission...'); // Debug log
+
+    // Collect form data
+    const form = event.target;
+    const name = form.querySelector('input[name="name"]').value;
+    const email = form.querySelector('input[name="email"]').value;
+    const phone = form.querySelector('input[name="phone"]').value;
+    const amount = form.querySelector('input[name="amount"]').value;
+
+    // Validate amount
+    if (amount <= 0) {
+        alert('Please enter a valid amount greater than 0.');
+        return;
+    }
+
+    // Razorpay Integration
+    const options = {
+        key: 'your-razorpay-key', // Replace with your Razorpay key
+        amount: amount * 100, // Convert INR to paise
+        currency: 'INR',
+        name: 'United Solutions Plus',
+        description: 'Payment for Services',
+        handler: function(response) {
+            alert('Payment successful! Payment ID: ' + response.razorpay_payment_id);
+            // Redirect to customer portal or success page
+            window.location.href = 'customer-portal.html';
+            // Close the modal after successful payment
+            closePaymentModal();
+        },
+        prefill: {
+            name: name,
+            email: email,
+            contact: phone
+        },
+        theme: {
+            color: '#00c4b4'
+        }
+    };
+
+    // Check if Razorpay script is loaded
+    if (typeof Razorpay === 'undefined') {
+        alert('Razorpay SDK not loaded. Please check your internet connection or try again later.');
+        console.error('Razorpay SDK not loaded. Ensure the script tag is included.');
+        return;
+    }
+
+    const rzp = new Razorpay(options);
+    rzp.on('payment.failed', function(response) {
+        alert('Payment failed: ' + response.error.description);
+    });
+    rzp.open();
+}
+
+// Ensure the window.onclick handles both modals
+window.onclick = function(event) {
+    const authModal = document.getElementById('auth-modal');
+    const paymentModal = document.getElementById('payment-modal');
+    if (event.target === authModal) {
+        authModal.style.display = 'none';
+    }
+    if (event.target === paymentModal) {
+        paymentModal.style.display = 'none';
+    }
+}
+    </script>
+
+    <!-- Modal (should be at the bottom of your <body>) -->
+<div id="auth-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeAuthModal()">×</span>
+        <div class="tab-container">
+            <button class="tab active" onclick="showTab('login')">Login</button>
+            <button class="tab" onclick="showTab('signup')">Sign Up</button>
+        </div>
+        <div id="login-tab" class="tab-content active">
+            <h3>Customer Login</h3>
+            <form id="login-form" onsubmit="handleLogin(event)">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div id="signup-tab" class="tab-content">
+            <h3>Sign Up</h3>
+            <form id="signup-form" onsubmit="handleSignup(event)">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Payment modal at the bottom of your <body> -->
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closePaymentModal()">×</span>
+            <h3>Enter Payment Details</h3>
+            <form id="payment-form" onsubmit="handlePayment(event)">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                <input type="number" name="amount" placeholder="Amount to Pay (in INR)" min="1" required>
+                <button type="submit" class="razorpay-btn">Pay with Razorpay</button>
+            </form>
+            <div class="upi-payment-section">
+                <h4>Or Pay via UPI</h4>
+                <p>Scan the QR code below to pay using your UPI app:</p>
+                <img src="upi-qr-code.png" alt="UPI QR Code" class="upi-qr-code">
+                <p class="upi-instructions">Open your UPI app, scan the QR code, and enter the amount above to complete the payment.</p>
+            </div>
+        </div>
+    </div>
+    
+    
+
+</body>
+
+</html>
